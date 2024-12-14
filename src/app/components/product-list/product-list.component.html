@@ -1,11 +1,23 @@
-<div class="product-list">
-    <h1>Product List</h1>
-    <div class="product" *ngFor="let product of products">
-      <img [src]="product.imageFile" alt="{{ product.name }}" />
-      <h2>{{ product.name }}</h2>
-      <p>{{ product.description }}</p>
-      <p><strong>Price:</strong> {{ product.price | currency }}</p>
-      <p><strong>Categories:</strong> {{ product.category.join(', ') }}</p>
-    </div>
-  </div>
-  
+<h1>Product List</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <!-- <th scope="col">#</th> -->
+      <th scope="col">name</th>
+      <th scope="col">description</th>
+      <th scope="col">price</th>
+      <th scope="col">category</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="product" *ngFor="let product of products">
+      <!-- <th scope="row">1</th> -->
+      <td>{{ product.name }}</td>
+      <td>{{ product.description }}</td>
+      <td>{{ product.price | currency }}</td>
+      <td> {{ product.category.join(', ') }}</td>
+    </tr>
+
+  </tbody>
+</table>
